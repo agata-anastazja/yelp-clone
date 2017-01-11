@@ -7,6 +7,7 @@ end
 
 
 gem 'devise'
+gem 'envyable'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
