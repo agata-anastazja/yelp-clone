@@ -17,4 +17,9 @@ class User < ApplicationRecord
     reviewed_restaurants.include? restaurant
   end
 
+  has_many :reviews
+  has_many :restaurants
+  has_many :reviewed_restaurants, through: :reviews, source: :restaurant
+
+
 end
