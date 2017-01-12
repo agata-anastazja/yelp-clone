@@ -80,5 +80,13 @@ feature 'restaurants' do
 
     end
 
+    scenario "can only edit restaurant by user who added restaurant" do
+      sign_in_and_add_restaurant
+      click_link 'Sign out'
+      sign_in_second_user
+      expect(page).not_to have_content 'Edit KFC'
+
+    end
+
   end
 end
