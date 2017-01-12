@@ -13,7 +13,7 @@ I have created a Yelp Clone, which is a popular web application that allows user
 
 - In the terminal, migrate your databases by running the ```bin/rake db:migrate``` command.
 
-######If you would like to have functionality that allows a user to sign in using facebook, please create a 'config/env.yml' file and navigate to 'https://developers.facebook.com/' and log in. After creating a facebook login product add your API key values to the 'env.yml' file being sure to name the key the same as displayed in the 'config/secrets.yml' file.
+*######If you would like to have functionality that allows a user to sign in using facebook, please create a 'config/env.yml' file and navigate to 'https://developers.facebook.com/' and log in. After creating a facebook login product add your API key values to the 'env.yml' file being sure to name the key the same as displayed in the 'config/secrets.yml' file.*
 
 - In the terminal, run the rails server by running the ```bin/rails s``` command.
 
