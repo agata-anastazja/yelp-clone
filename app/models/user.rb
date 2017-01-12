@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+
+  has_many :restaurants
+  has_many :reviews
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -12,13 +15,13 @@ class User < ApplicationRecord
     end
   end
 
-  def self.new_with_session(params, session)
-    super.tap do |user|
-      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-        user.email = data["email"] if user.email.blank?
-      end
-    end
-  end
+  # def self.new_with_session(params, session)
+  #   super.tap do |user|
+  #     if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+  #       user.email = data["email"] if user.email.blank?
+  #     end
+  #   end
+  # end
 
 
 

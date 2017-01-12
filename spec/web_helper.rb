@@ -13,3 +13,7 @@ def create_restaurant
   fill_in 'Name', with: 'KFC'
   click_button 'Create Restaurant'
 end
+
+def sign_out
+  click_link('Sign out')
+end
