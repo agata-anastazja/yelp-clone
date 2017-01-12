@@ -5,6 +5,7 @@ feature "reviewing" do
 
   before do
     @user = User.create(email: "chris@gmail.com", password: "password")
+    @user2 = User.create(email: "agata@gmail.com", password: "password")
   end
 
   scenario "allows users to leave a review using a form" do
@@ -17,4 +18,8 @@ feature "reviewing" do
     expect(current_path).to eq "/restaurants"
     expect(page).to have_content "so so"
   end
+
+  
+
+
 end

@@ -5,6 +5,7 @@ feature 'restaurants' do
 
   before do
     @user = User.create(email: "chris@gmail.com", password: "password")
+      @user2 = User.create(email: "agata@gmail.com", password: "password")
   end
 
   context 'no restaurants have been added' do
@@ -69,6 +70,14 @@ feature 'restaurants' do
       click_link 'Delete KFC'
       expect(page).not_to have_content('KFC')
       expect(page).to have_content('Restaurant deleted successfully')
+    end
+
+    scenario "can only delete restaurant by user who added restaurant" do
+      sign_in_and_add_restaurant
+      click_link 'Sign out'
+      sign_in_second_user
+      expect(page).not_to have_content 'Delete KFC'
+
     end
 
   end
