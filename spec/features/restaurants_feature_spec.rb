@@ -12,7 +12,7 @@ feature 'restaurants' do
 
   context 'restaurants have been added' do
   before do
-    Restaurant.create(name: 'KFC')
+    create_restaurant
   end
 
   scenario 'display restaurants' do
@@ -25,10 +25,7 @@ feature 'restaurants' do
 
   context 'creating restaurants' do
   scenario 'prompts user to fill out a form, then displays the new restaurant' do
-    visit '/restaurants'
-    click_link 'Add a restaurant'
-    fill_in 'Name', with: 'KFC'
-    click_button 'Create Restaurant'
+    create_restaurant
     expect(page).to have_content 'KFC'
     expect(current_path).to eq '/restaurants'
   end
@@ -71,7 +68,9 @@ end
   end
 
   context 'deleting restaurants' do
-    before { Restaurant.create name: 'KFC', description: 'Crispy' }
+    before do
+      create_restaurant
+    end
     scenario 'removes a restaurant when a user clicks a delete link' do
       visit '/restaurants'
       click_link 'Delete KFC'

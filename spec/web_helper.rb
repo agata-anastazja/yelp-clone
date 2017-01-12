@@ -1,0 +1,15 @@
+def sign_up
+  visit('/')
+  click_link('Sign up')
+  fill_in 'user_email', with: 'test@example.com'
+  fill_in 'user_password', with: 'testtest'
+  fill_in 'user_password_confirmation', with: 'testtest'
+  click_button 'Sign up'
+end
+
+def create_restaurant
+  visit '/restaurants'
+  click_link 'Add a restaurant'
+  fill_in 'Name', with: 'KFC'
+  click_button 'Create Restaurant'
+end
