@@ -6,7 +6,7 @@
       -if @user.restaurants.include?(restaurant)
         = link_to "Edit #{restaurant.name}", edit_restaurant_path(restaurant)
         = link_to "Delete #{restaurant.name}", restaurant_path(restaurant), method: :delete
-      - if @reviews.restaurant_id.include?(restaurant.id)
+      - if @user.reviews.include?(restaurant)
         = link_to "Review #{restaurant.name}", new_restaurant_review_path(restaurant)
 - else
   %h1 No restaurants yet!

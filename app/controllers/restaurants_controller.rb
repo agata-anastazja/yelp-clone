@@ -5,7 +5,7 @@ class RestaurantsController < ApplicationController
   def index
     @user = current_user if current_user
     @restaurants = Restaurant.all
-    @reviews =  Restaurant.all[0].reviews
+    @reviews =  Review.all
   end
 
 
