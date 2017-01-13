@@ -26,3 +26,10 @@ def sign_up_second_user
   fill_in 'user_password_confirmation', with: 'testtest'
   click_button 'Sign up'
 end
+
+def review(thoughts, value)
+  click_link 'Review KFC'
+  fill_in "Thoughts", with: thoughts
+  select value, from: 'Rating'
+  click_button 'Leave Review'
+end
