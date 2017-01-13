@@ -5,7 +5,9 @@ class RestaurantsController < ApplicationController
   def index
     @user = current_user if current_user
     @restaurants = Restaurant.all
+
   end
+
 
   def new
     @restaurant = Restaurant.new
@@ -46,5 +48,7 @@ class RestaurantsController < ApplicationController
   def restaurant_params
     params.require(:restaurant).permit(:name)
   end
+
+
 
 end

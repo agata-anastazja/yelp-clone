@@ -90,6 +90,14 @@ end
       expect(page).not_to have_content 'KFC'
       expect(page).to have_content 'Restaurant deleted successfully'
     end
+
+    scenario 'User can only edit or delete restaurants they have created' do
+      visit '/restaurants'
+      sign_out
+      sign_up_second_user
+      expect(page).not_to have_content 'Delete KFC'
+      expect(page).not_to have_content 'Edit KFC'
+    end
   end
 
 end
